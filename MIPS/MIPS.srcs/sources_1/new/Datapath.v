@@ -28,8 +28,14 @@ module Datapath(
         output logic [1:0] alu_flag,
         output decoded_instruction_type decoded_instruction,
         output logic [15:0] data_out,
-        output logic [5:0] address
+        output logic [5:0] address,
+        input logic flag_r_e,
+        output logic zero,
+        output logic ovf,
+        output logic sgn_ovf
     );
+    
+ 
 
    logic [15:0] A;
    logic [15:0] B;
@@ -37,6 +43,7 @@ module Datapath(
    logic cc;
    logic ov_f;
    logic sov_f;
+   logic uzero;
    logic [15:0] instruction;
    logic [15:0] data;
    logic [15:0] write_data;
@@ -51,6 +58,20 @@ module Datapath(
    logic [5:0] pc_in;
    logic [5:0] decod_address;
    logic [1:0] decod_addrB;
+   
+    
+   always_ff @(posedge clock)begin
+   
+   if(flag_r_e)begin
+   zero = uzero;
+   ovf= ov_f;
+   sgn_ovf=sov_f;
+   
+   
+   end
+   
+   
+   end
    
     always_comb begin
       case(aluop)
@@ -80,11 +101,18 @@ module Datapath(
       endcase
     end
     
+    assign zero = ~|(ula_out);
+    
+    
+     
+    
     always_ff @(posedge clock or negedge reset)begin
         if(ir_enable) begin
             instruction <= data_in;
         end
     end
+    
+  
     
     always_ff @(posedge clock or negedge reset)begin
         data <= data_in;

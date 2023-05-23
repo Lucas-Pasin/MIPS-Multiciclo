@@ -2,22 +2,23 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue May 23 17:44:59 2023
-# Process ID: 2112
-# Current directory: C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2752 C:\Users\lucas\Desktop\ORG TRABSON\MIPS-Multiciclo\MIPS\MIPS.xpr
-# Log file: C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/vivado.log
-# Journal file: C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS\vivado.jou
+# Start of session at: Tue May 23 19:32:00 2023
+# Process ID: 21668
+# Current directory: C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18644 C:\Users\Admin\Desktop\TRAB ORG\MIPS-Multiciclo\MIPS\MIPS.xpr
+# Log file: C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/vivado.log
+# Journal file: C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.xpr}
-WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.gen/sources_1'.
+open_project {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/MIPS.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS' since last save.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/MIPS.gen/sources_1', nor could it be found using path 'C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.gen/sources_1'.
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/MIPS.ip_user_files', nor could it be found using path 'C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.ip_user_files'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.2/data/ip'.
-open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:29 . Memory (MB): peak = 925.887 ; gain = 3.316
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.2/data/ip'.
 update_compile_order -fileset sources_1
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue May 23 19:13:18 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue May 23 19:36:22 2023...
