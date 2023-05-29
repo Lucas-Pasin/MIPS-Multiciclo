@@ -1,6 +1,18 @@
 `timescale 1ns / 1ps
   
- 
+  typedef enum  logic [4:0]{
+    I_NOP,
+    I_LOAD,
+    I_STORE,
+    I_ADD,
+    I_SUB,
+    I_AND,
+    I_OR,
+    I_JUMP,
+    I_JZERO,
+    I_HALT
+}decoded_instruction_type;
+
 module Control(
 
         input logic clock,
@@ -22,9 +34,8 @@ module Control(
         input logic ovf,
         input logic sgn_ovf
        
-             
-
     );
+    
     typedef enum {
     BUSCA_INSTR
    ,REG_INSTR

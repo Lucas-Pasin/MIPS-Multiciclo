@@ -1,38 +1,27 @@
 `timescale 1ns / 1ps
-  typedef enum  logic [4:0]{
-    I_NOP,
-    I_LOAD,
-    I_STORE,
-    I_ADD,
-    I_SUB,
-    I_AND,
-    I_OR,
-    I_JUMP,
-    I_JZERO,
-    I_HALT
-}decoded_instruction_type;
+
 
 module Datapath(
-        input logic clock,
-        input logic reset,
-        input logic s_addr,
-        input logic pce,
-        input logic mem_write,
-        input logic jump,
-        input logic ir_enable,
-        input logic opd,
-        input logic mtr,
-        input logic reg_write,
-        input logic [1:0] aluop,
-        input logic [15:0] data_in,
-        output logic [1:0] alu_flag,
+        input logic     clock,
+        input logic     reset,
+        input logic     s_addr,
+        input logic     pce,
+        input logic     mem_write,
+        input logic     jump,
+        input logic     ir_enable,
+        input logic     opd,
+        input logic     mtr,
+        input logic     reg_write,
+        input logic     [1:0] aluop,
+        input logic     [15:0] data_in,
+        input logic     flag_r_e,
+        output logic    [1:0] alu_flag,
         output decoded_instruction_type decoded_instruction,
-        output logic [15:0] data_out,
-        output logic [5:0] address,
-        input logic flag_r_e,
-        output logic zero,
-        output logic ovf,
-        output logic sgn_ovf
+        output logic    [15:0] data_out,
+        output logic    [5:0] address,
+        output logic    zero,
+        output logic    ovf,
+        output logic    sgn_ovf
     );
     
  
@@ -61,16 +50,11 @@ module Datapath(
    
     
    always_ff @(posedge clock)begin
-   
-   if(flag_r_e)begin
-   zero = uzero;
-   ovf= ov_f;
-   sgn_ovf=sov_f;
-   
-   
-   end
-   
-   
+       if(flag_r_e)begin
+            zero = uzero;
+            ovf= ov_f;
+            sgn_ovf=sov_f;
+       end
    end
    
     always_comb begin

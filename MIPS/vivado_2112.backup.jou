@@ -2,16 +2,13 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon May 29 19:24:07 2023
-# Process ID: 5148
+# Start of session at: Tue May 23 17:44:59 2023
+# Process ID: 2112
 # Current directory: C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7120 C:\Users\lucas\Desktop\ORG TRABSON\MIPS-Multiciclo\MIPS\MIPS.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2752 C:\Users\lucas\Desktop\ORG TRABSON\MIPS-Multiciclo\MIPS\MIPS.xpr
 # Log file: C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/vivado.log
 # Journal file: C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.xpr}
 update_compile_order -fileset sources_1
-set_property file_type VHDL [get_files  {{C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sim_1/new/Testbench.sv}}]
-set_property file_type Verilog [get_files  {{C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sim_1/new/Testbench.sv}}]
-set_property file_type SystemVerilog [get_files  {{C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sim_1/new/Testbench.sv}}]
