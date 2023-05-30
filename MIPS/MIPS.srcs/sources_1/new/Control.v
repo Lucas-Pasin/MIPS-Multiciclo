@@ -76,6 +76,7 @@ state_t prox_estado;
         opd = 'b0;
         mtr = 'b0;
         halt = 'b0;
+        flag_r_e= 1'b0;
         case(estado)
           BUSCA_INSTR: begin
           prox_estado = REG_INSTR;
@@ -99,7 +100,7 @@ state_t prox_estado;
                 prox_estado= LOAD_1;
                 s_addr=1'b1;
                 opd= 1'b1;
-                mtr= 1'b1;
+                mtr= 1'b0;
                 
                 end
                 
@@ -122,7 +123,7 @@ state_t prox_estado;
                 end
                 
                 I_SUB: begin
-                prox_estado = SUB;
+                prox_estado = SUB; 
                 aluop = 2'b01;
                 
                 end
@@ -140,8 +141,7 @@ state_t prox_estado;
                 end
                 
                 I_JZERO: begin
-                prox_estado= JZERO;
-                
+                   prox_estado= JZERO;
                 end
                 default begin
                     prox_estado = BUSCA_INSTR;
@@ -151,39 +151,44 @@ state_t prox_estado;
         end 
         
         JZERO: begin
+            prox_estado = BUSCA_INSTR;
             if(zero) begin
                 jump = 1'b1;
-                pce= 1'b1; 
+                pce= 1'b1;
                 end
         end
         
         
         ADD: begin
-            flag_r_e= 1'b1;
             prox_estado = BUSCA_INSTR;
+            flag_r_e= 1'b1;
             reg_write = 1'b1;
-            aluop= 2'b00;
+            aluop = 2'b00;
+            mtr = 'b1;
         end
         
         SUB: begin
-            flag_r_e= 1'b1;
             prox_estado = BUSCA_INSTR;
+            flag_r_e= 1'b1;
             reg_write = 1'b1;
             aluop= 2'b01;
+            mtr = 'b1;
         end
         
         OR_: begin
-            flag_r_e= 1'b1;
             prox_estado = BUSCA_INSTR;
+            flag_r_e= 1'b1;
             reg_write = 1'b1;
-            aluop= 2'b10;    
+            aluop= 2'b10;
+            mtr = 'b1;    
         end
         
         AND_: begin
-            flag_r_e= 1'b1;
             prox_estado = BUSCA_INSTR;
+            flag_r_e= 1'b1;
             reg_write = 1'b1;
             aluop= 2'b11;
+            mtr = 'b1;
         end
         
         JUMP_1: begin
@@ -194,26 +199,30 @@ state_t prox_estado;
         
         LOAD_1: begin
         prox_estado= LOAD_2;
+        ir_enable = 'b0;
         s_addr=1'b1;
         opd= 1'b1;
-        mtr= 1'b1;
+        mtr= 1'b0;
         end
         
         LOAD_2: begin
         prox_estado= BUSCA_INSTR;
+        ir_enable = 'b0;
         s_addr=1'b1;
         reg_write=1'b1;
         opd= 1'b1;
-        mtr= 1'b1;
+        mtr= 1'b0;
         end
         
         STORE_1: begin
-          prox_estado = BUSCA_INSTR;
+          prox_estado = STORE_2;
+          ir_enable = 'b0;
           s_addr=1'b1;
         end
         
         STORE_2: begin
             prox_estado= BUSCA_INSTR;
+            ir_enable = 'b0;
             s_addr=1'b1;
             mem_write= 1'b1;
         end

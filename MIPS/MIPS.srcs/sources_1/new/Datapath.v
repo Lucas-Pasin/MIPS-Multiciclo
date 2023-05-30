@@ -82,7 +82,7 @@ module Datapath(
       endcase
     end
     
-    assign zero = ~|(ula_out);
+    assign uzero = ~|(ula_out);
     
     always_ff @(posedge clock)begin
         if(ir_enable) begin
@@ -148,6 +148,10 @@ module Datapath(
         end
      end
      
+    
+     assign data_out = B;
+     
+     
      always_comb begin
         if(s_addr) begin
             address <= decod_address;
@@ -178,19 +182,19 @@ module Datapath(
                 decod_address = instruction[5:0];
             end
             8'b1010_0001: begin  // ADD
-                decoded_instruction = I_OR;
+                decoded_instruction = I_ADD;
                 addr_a = instruction[1:0];
                 decod_addrB = instruction[3:2];
                 addr_x = instruction[7:6];
             end
             8'b1010_0010: begin  // SUB
-                decoded_instruction = I_OR;
+                decoded_instruction = I_SUB;
                 addr_a = instruction[1:0];
                 decod_addrB = instruction[3:2];
                 addr_x = instruction[7:6];
             end
             8'b1010_0011: begin  // AND
-                decoded_instruction = I_OR;
+                decoded_instruction = I_AND;
                 addr_a = instruction[1:0];
                 decod_addrB = instruction[3:2];
                 addr_x = instruction[7:6];
