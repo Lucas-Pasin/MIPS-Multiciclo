@@ -56,18 +56,21 @@ module Control(
 state_t estado;
 state_t prox_estado;
 
-    always_ff @(posedge clock or negedge reset) begin
-   
-        if(!reset) begin
-        estado<=BUSCA_INSTR;
-        end
-        else begin
-        estado<=prox_estado;
+    always_ff @(posedge clock or posedge reset) begin
+        if(reset) begin
+            estado<=BUSCA_INSTR;
+        end else begin
+            estado<=prox_estado;
         end
     end
     
     always_comb begin
-    
+        jump = 'b0;
+        s_addr = 'b0;
+        ir_enable = 'b0;
+        mem_write = 'b0;
+        reg_write = 'b0;
+        pce = 'b0;
         case(estado)
           BUSCA_INSTR: begin
           prox_estado = REG_INSTR;
@@ -75,12 +78,11 @@ state_t prox_estado;
  
         REG_INSTR: begin
             prox_estado = DECODIFICA;
-            ir_enable = 1'b1;
-            pce = 1'b1;
+            ir_enable = 'b1;
+            pce = 'b1;
             end   
         
         DECODIFICA: begin 
-            prox_estado = BUSCA_INSTR;
             case(decoded_instruction)
             
                 I_HALT:begin
@@ -136,7 +138,9 @@ state_t prox_estado;
                 prox_estado= JZERO;
                 
                 end
-                
+                default begin
+                    prox_estado = BUSCA_INSTR;
+                end
             endcase
         
         end 

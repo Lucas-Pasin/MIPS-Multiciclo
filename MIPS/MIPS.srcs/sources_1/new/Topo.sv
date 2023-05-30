@@ -78,4 +78,11 @@ Memory memory_i
      .adress(adress_i)
 );
 
+Testbench testbench_i(
+    .clock(clock),
+    .reset(reset),
+    .halt(halt)
+);
+    
+    
 endmodule : Topo

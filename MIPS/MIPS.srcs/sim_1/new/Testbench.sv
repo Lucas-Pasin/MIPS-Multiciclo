@@ -5,12 +5,6 @@ module Testbench(
     input logic halt
     );
 
-Topo topo_i(
-    .clock(clock),
-    .reset(reset),
-    .halt(halt)
-);
-
 initial begin
     reset = 0;
     #6;

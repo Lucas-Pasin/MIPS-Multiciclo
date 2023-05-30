@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 
-
 module Datapath(
         input logic     clock,
         input logic     reset,
@@ -23,9 +22,7 @@ module Datapath(
         output logic    ovf,
         output logic    sgn_ovf
     );
-    
- 
-
+   
    logic [15:0] A;
    logic [15:0] B;
    logic [15:0] ula_out;
@@ -87,18 +84,14 @@ module Datapath(
     
     assign zero = ~|(ula_out);
     
-    
-     
-    
-    always_ff @(posedge clock or negedge reset)begin
+    always_ff @(posedge clock)begin
         if(ir_enable) begin
             instruction <= data_in;
         end
     end
     
-  
     
-    always_ff @(posedge clock or negedge reset)begin
+    always_ff @(posedge clock)begin
         data <= data_in;
     end
     
@@ -111,7 +104,7 @@ module Datapath(
     end
     
     //Banco de registradores
-    always_ff @(posedge clock or negedge reset) begin 
+    always_ff @(posedge clock) begin 
         if(reg_write) begin
             unique case(addr_x)
                 2'b00: R0=write_data;
@@ -134,14 +127,13 @@ module Datapath(
             endcase
      end
      
-     always_ff @(posedge clock or negedge reset) begin //PC
+     always_ff @(posedge clock) begin //PC
         if(reset) begin
             R0 <= 'd0;
             R1 <= 'd0;
             R2 <= 'd0;
             R3 <= 'd0;
         end
-        
         if(pce) begin
             pc <= pc_in;
         end
@@ -149,7 +141,7 @@ module Datapath(
      
      always_comb begin
         if(jump) begin
-            
+            pc_in <= decod_address;
         end else begin
             pc_in <= pc + 1;
         end
@@ -157,7 +149,7 @@ module Datapath(
      
      always_comb begin
         if(s_addr) begin
-            
+            address <= decod_address;
         end else begin
             address <= pc;
         end

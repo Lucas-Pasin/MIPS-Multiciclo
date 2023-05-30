@@ -11,7 +11,7 @@ module Memory(
 
 logic [15:0] memoria [0:63];
 
-always_ff @(posedge clock or negedge reset)begin
+always_ff @(posedge clock)begin
     if(reset) begin
         memoria[0]  <= "1111111111111111";
         memoria[1]  <= "0000000000000000";
@@ -80,10 +80,12 @@ always_ff @(posedge clock or negedge reset)begin
     end else begin
         if(mem_write) begin
             memoria[adress] <= data_out;
-        end else begin
-            data_in <= memoria[adress];
-        end
+        end  
     end
+end
+
+always_comb begin
+    data_in <= memoria[adress];
 end
 
 endmodule
