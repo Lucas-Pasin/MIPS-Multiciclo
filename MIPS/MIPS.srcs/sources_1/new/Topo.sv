@@ -1,15 +1,15 @@
 `timescale 1ns / 1ps
 
 module Topo(
-    input  logic        reset,
-    input  logic        clock,
-    output logic        halt,
-    output logic  [5:0] address,
-    input  logic [15:0] data_in,
-    output logic [15:0] data_out,
-    output logic        mem_write
+    input   logic        reset,
+    input   logic        clock,
+    output  logic        halt
 );
 
+logic            [15:0]  data_in_i;
+logic            [15:0]  data_out_i;
+logic                    mem_write_i;
+logic              [5:0] adress_i;
 logic                    jump_s;
 logic                    pce_s;
 logic                    ir_enable_s;
@@ -40,10 +40,11 @@ Datapath datapath_i
     .zero(zero_s),
     .ovf(ovf_s),
     .sgn_ovf(sgn_ovf_s),
-    .address(address_s),
-    .data_out(data_out),
-    .data_in(data_in),
-    .opd(opd_s)
+    .address(adress_i),
+    .data_out(data_out_i),
+    .data_in(data_in_i),
+    .opd(opd_s),
+    .mem_write(mem_write_i)
 );
 
 Control control_i
@@ -63,7 +64,18 @@ Control control_i
     .ovf(ovf_s),
     .sgn_ovf(sgn_ovf_s),
     .opd(opd_s),
-    .halt(halt)
+    .halt(halt),
+    .mem_write(mem_write_i)
+);
+
+Memory memory_i
+(
+     .data_out(data_out_i),
+     .data_in(data_in_i),
+     .clock(clock),
+     .reset(reset),
+     .mem_write(mem_write_i),
+     .adress(adress_i)
 );
 
 endmodule : Topo

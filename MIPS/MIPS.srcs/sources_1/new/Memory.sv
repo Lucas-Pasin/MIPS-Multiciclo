@@ -13,7 +13,7 @@ logic [15:0] memoria [0:63];
 
 always_ff @(posedge clock or negedge reset)begin
     if(reset) begin
-        memoria[0]  <= "0000000000000000";
+        memoria[0]  <= "1111111111111111";
         memoria[1]  <= "0000000000000000";
         memoria[2]  <= "0000000000000000";
         memoria[3]  <= "0000000000000000";
@@ -22,7 +22,7 @@ always_ff @(posedge clock or negedge reset)begin
         memoria[6]  <= "0000000000000000";
         memoria[7]  <= "0000000000000000";
         memoria[8]  <= "0000000000000000";
-        memoria[9]  <= "0000000000000000";
+        memoria[9]  <= "1111111111111111";
         memoria[10] <= "0000000000000000";
         memoria[11] <= "0000000000000000";        
         memoria[12] <= "0000000000000000";
@@ -76,8 +76,7 @@ always_ff @(posedge clock or negedge reset)begin
         memoria[60] <= "0000000000000000";     
         memoria[61] <= "0000000000000000";     
         memoria[62] <= "0000000000000000";     
-        memoria[63] <= "0000000000000000";     
-        memoria[64] <= "0000000000000000";     
+        memoria[63] <= "0000000000000000";        
     end else begin
         if(mem_write) begin
             memoria[adress] <= data_out;
