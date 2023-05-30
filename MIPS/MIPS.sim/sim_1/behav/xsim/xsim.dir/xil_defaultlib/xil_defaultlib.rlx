@@ -1,0 +1,10 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sim_1/new/Testbench.sv,1685475315,systemVerilog,,C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Topo.sv,,Testbench,,uvm,,,,,,
+C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Control.v,1685482759,systemVerilog,C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sim_1/new/Testbench.sv;C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Datapath.v;C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Memory.sv;C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Topo.sv,C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Datapath.v,,$unit_Control_v;Control,,uvm,,,,,,
+C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Datapath.v,1685482258,systemVerilog,,C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Memory.sv,,Datapath,,uvm,,,,,,
+C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Memory.sv,1685482987,systemVerilog,,C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sim_1/new/Testbench.sv,,Memory,,uvm,,,,,,
+C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.srcs/sources_1/new/Topo.sv,1685476902,systemVerilog,,,,Topo,,uvm,,,,,,
