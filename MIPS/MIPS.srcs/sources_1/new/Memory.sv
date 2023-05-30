@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module Memory(
     input logic [15:0] data_out,
     output logic [15:0] data_in,
@@ -13,10 +11,10 @@ logic [15:0] memoria [0:63];
 
 always_ff @(posedge clock)begin
     if(reset) begin
-        memoria[0]  <= "1111111111111111";
-        memoria[1]  <= "0000000000000000";
-        memoria[2]  <= "0000000000000000";
-        memoria[3]  <= "0000000000000000";
+        memoria[0]  = "FFFF";
+        memoria[1]  = "0000000000000000";
+        memoria[2]  = "0000000000000000";
+        memoria[3]  = "0000000000000000";
         memoria[4]  <= "0000000000000000";
         memoria[5]  <= "0000000000000000";        
         memoria[6]  <= "0000000000000000";

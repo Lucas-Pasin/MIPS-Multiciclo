@@ -71,6 +71,11 @@ state_t prox_estado;
         mem_write = 'b0;
         reg_write = 'b0;
         pce = 'b0;
+        aluop = 'b00;
+        ir_enable = 'b0;
+        opd = 'b0;
+        mtr = 'b0;
+        halt = 'b0;
         case(estado)
           BUSCA_INSTR: begin
           prox_estado = REG_INSTR;

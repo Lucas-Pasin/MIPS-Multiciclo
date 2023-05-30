@@ -133,6 +133,7 @@ module Datapath(
             R1 <= 'd0;
             R2 <= 'd0;
             R3 <= 'd0;
+            pc = 'd0;
         end
         if(pce) begin
             pc <= pc_in;
