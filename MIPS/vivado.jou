@@ -2,147 +2,72 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue May 30 16:44:06 2023
-# Process ID: 10636
-# Current directory: C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3956 C:\Users\lucas\Desktop\ORG TRABSON\MIPS-Multiciclo\MIPS\MIPS.xpr
-# Log file: C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/vivado.log
-# Journal file: C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS\vivado.jou
+# Start of session at: Mon Jun 26 21:12:29 2023
+# Process ID: 24464
+# Current directory: C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30316 C:\Users\Admin\Desktop\TRAB ORG\MIPS-Multiciclo\MIPS\MIPS.xpr
+# Log file: C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/vivado.log
+# Journal file: C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/MIPS.xpr}
+open_project {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/MIPS.xpr}
 update_compile_order -fileset sources_1
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-save_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
 close_sim
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
 close_sim
 launch_simulation
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+source Topo.tcl
+current_wave_config {Topo_behav.wcfg}
+add_wave {{/Topo/datapath_i}} 
+save_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+save_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+save_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+save_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+save_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+close_sim
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
 close_sim
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
 close_sim
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
 close_sim
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
 close_sim
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
 close_sim
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+source Topo.tcl
+close_sim
+close_project
+open_project {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/MIPS.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
 close_sim
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-save_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
 close_sim
 launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
+open_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-save_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-save_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-save_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-save_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-save_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-save_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
-save_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config {C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
-source Topo.tcl
+save_wave_config {C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/Topo_behav.wcfg}
 close_sim

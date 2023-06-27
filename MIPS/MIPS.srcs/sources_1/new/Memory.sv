@@ -10,7 +10,7 @@ module Memory(
 logic [15:0] memoria [0:63];
 
 initial begin
-  $readmemh("C:/Users/lucas/Desktop/ORG TRABSON/MIPS-Multiciclo/programa.txt", memoria);
+  $readmemh("C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/programa.txt", memoria);
  end
 
 always_ff @(posedge clock) begin

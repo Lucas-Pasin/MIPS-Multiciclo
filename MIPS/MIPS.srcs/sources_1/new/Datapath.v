@@ -20,7 +20,9 @@ module Datapath(
         output logic    [5:0] address,
         output logic    zero,
         output logic    ovf,
-        output logic    sgn_ovf
+        output logic    sgn_ovf,
+        input logic    ula_src,
+        input logic    mem_in
     );
    
    logic [15:0] A;
@@ -44,6 +46,9 @@ module Datapath(
    logic [5:0] pc_in;
    logic [5:0] decod_address;
    logic [1:0] decod_addrB;
+   logic [5:0] adress2;
+   logic [15:0] sign_extended; 
+   logic [15:0] A2;
    
     
    always_ff @(posedge clock)begin
@@ -114,10 +119,10 @@ module Datapath(
             endcase
          end 
              case(addr_a)
-                2'b00: A=R0;
-                2'b01: A=R1;
-                2'b10: A=R2;
-                2'b11: A=R3;
+                2'b00: A2=R0;
+                2'b01: A2=R1;
+                2'b10: A2=R2;
+                2'b11: A2=R3;
             endcase
             case(addr_b)
                 2'b00: B=R0;
@@ -154,9 +159,9 @@ module Datapath(
      
      always_comb begin
         if(s_addr) begin
-            address <= decod_address;
+            adress2 <= decod_address;
         end else begin
-            address <= pc;
+            adress2 <= pc;
         end
      end
      
@@ -168,6 +173,27 @@ module Datapath(
         end
      end
      
+     always_comb begin
+     if(mem_in)begin
+        address <= ula_out [5:0];
+     end else begin
+            address <= adress2;
+        end
+     end
+     
+    // assign sign_extended = 4'(signed'(decod_address)); 
+     
+     
+     always_comb begin
+     if(ula_src)begin
+         A <= sign_extended; 
+     end else begin
+            A <= A2;
+         end
+     end
+     
+     
+     
     always_comb begin  // DECODER
           decod_address = 'd0;
          case(instruction[15:8])
@@ -175,6 +201,12 @@ module Datapath(
                 decoded_instruction = I_LOAD;
                 addr_x = instruction[7:6];
                 decod_address = instruction[5:0];
+            end
+            8'b1000_0100: begin //ILOAD
+                decoded_instruction = I_ILOAD;
+                addr_x = instruction[7:6];
+                sign_extended = instruction[3:0];
+                decod_addrB = instruction[5:4];
             end
             8'b1000_0010: begin  // STORE
                 decoded_instruction = I_STORE;

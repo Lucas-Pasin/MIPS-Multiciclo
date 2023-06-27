@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="124978fs"></ZoomStartTime>
-      <ZoomEndTime time="211779fs"></ZoomEndTime>
-      <Cursor1Time time="179078fs"></Cursor1Time>
+      <ZoomStartTime time="104144fs"></ZoomStartTime>
+      <ZoomEndTime time="181245fs"></ZoomEndTime>
+      <Cursor1Time time="145000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="102"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="183"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="34" />
+   <WVObjectSize size="35" />
    <wvobject fp_name="/Topo/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -156,5 +156,9 @@
    <wvobject fp_name="/Topo/datapath_i/ula_out" type="array">
       <obj_property name="ElementShortName">ula_out[15:0]</obj_property>
       <obj_property name="ObjectShortName">ula_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Topo/datapath_i/sign_extended" type="array">
+      <obj_property name="ElementShortName">sign_extended[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sign_extended[15:0]</obj_property>
    </wvobject>
 </wave_config>

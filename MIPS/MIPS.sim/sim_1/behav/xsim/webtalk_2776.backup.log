@@ -2,8 +2,8 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Jun 26 23:43:22 2023
-# Process ID: 10544
+# Start of session at: Mon Jun 26 23:37:01 2023
+# Process ID: 2776
 # Current directory: C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/MIPS.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/MIPS.sim/sim_1/behav/xsim/xsim.dir/Topo_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/Admin/Desktop/TRAB ORG/MIPS-Multiciclo/MIPS/MIPS.sim/sim_1/behav/xsim/webtalk.log
@@ -11,4 +11,4 @@
 #-----------------------------------------------------------
 source C:/Users/Admin/Desktop/TRAB -notrace
 couldn't read file "C:/Users/Admin/Desktop/TRAB": no such file or directory
-INFO: [Common 17-206] Exiting Webtalk at Mon Jun 26 23:43:22 2023...
+INFO: [Common 17-206] Exiting Webtalk at Mon Jun 26 23:37:01 2023...

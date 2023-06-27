@@ -23,6 +23,8 @@ logic                    zero_s;
 logic                    ovf_s;
 logic                    sgn_ovf_s;
 logic                    opd_s;
+logic                    ula_src_s;
+logic                    mem_in_s;
 
 Datapath datapath_i
 (
@@ -44,7 +46,9 @@ Datapath datapath_i
     .data_out(data_out_i),
     .data_in(data_in_i),
     .opd(opd_s),
-    .mem_write(mem_write_i)
+    .mem_write(mem_write_i),
+    .ula_src (ula_src_s),
+    .mem_in(mem_in_s)
 );
 
 Control control_i
@@ -65,7 +69,9 @@ Control control_i
     .sgn_ovf(sgn_ovf_s),
     .opd(opd_s),
     .halt(halt),
-    .mem_write(mem_write_i)
+    .mem_write(mem_write_i),
+    .ula_src(ula_src_s),
+    .mem_in(mem_in_s)
 );
 
 Memory memory_i
