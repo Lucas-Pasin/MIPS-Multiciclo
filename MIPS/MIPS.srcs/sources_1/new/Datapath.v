@@ -21,7 +21,7 @@ module Datapath(
         output logic    zero,
         output logic    ovf,
         output logic    sgn_ovf,
-        input logic    ula_src,
+        input logic    [1:0] ula_src,
         input logic    mem_in
     );
    
@@ -185,11 +185,18 @@ module Datapath(
      
      
      always_comb begin
-     if(ula_src)begin
-         A <= sign_extended; 
-     end else begin
-            A <= A2;
-         end
+     case(ula_src[1:0])
+     2'b00:begin
+         A <=A2;
+     end
+     2'b01:begin
+         A <= sign_extended;
+     end
+     2'b10:begin
+     A = A2<<<1;
+     end
+     endcase       
+         
      end
      
      
@@ -225,6 +232,14 @@ module Datapath(
                 decod_addrB = instruction[3:2];
                 addr_x = instruction[7:6];
             end
+            
+            8'b1010_1000:begin //Move
+                decoded_instruction = I_MOVE;
+                addr_a = instruction [1:0];
+                decod_addrB = instruction [1:0];
+                addr_x = instruction[7:6];
+            end
+             
             8'b1010_0011: begin  // AND
                 decoded_instruction = I_AND;
                 addr_a = instruction[1:0];
@@ -237,10 +252,17 @@ module Datapath(
                 decod_addrB = instruction[3:2];
                 addr_x = instruction[7:6];
             end
+            8'b10100101: begin // Shift add
+                decoded_instruction = I_SHIFTADD;
+                addr_a = instruction[1:0];
+                decod_addrB = instruction[3:2];
+                addr_x = instruction[7:6];
+            end
+            
             8'b0000_0001: begin  // BRANCH
                 decoded_instruction = I_JUMP;
                 decod_address = instruction[5:0];
-            end
+            end            
             8'b0000_0010: begin  // BZERO
                 decoded_instruction = I_JZERO;
                 decod_address = instruction[5:0];

@@ -12,7 +12,8 @@
     I_JZERO,
     I_HALT,
     I_ILOAD,
-    I_MOVE
+    I_MOVE,
+    I_SHIFTADD
 }decoded_instruction_type;
 
 module Control(
@@ -35,7 +36,7 @@ module Control(
         output logic flag_r_e,
         input logic ovf,
         input logic sgn_ovf,
-        output logic ula_src,
+        output logic [1:0] ula_src,
         output logic mem_in
        
     );
@@ -58,6 +59,7 @@ module Control(
    ,ILOAD
    ,ILOAD2
    ,MOVE
+   ,SHIFTADD
 }state_t;
 
 state_t estado;
@@ -84,7 +86,7 @@ state_t prox_estado;
         mtr = 'b0;
         halt = 'b0;
         flag_r_e= 1'b0;
-        ula_src=1'b0;
+        ula_src=2'b00;
         mem_in= 1'b0;
         case(estado)
           BUSCA_INSTR: begin
@@ -158,8 +160,19 @@ state_t prox_estado;
                  I_ILOAD: begin
                     prox_estado = ILOAD;
                     aluop = 2'b00;
-                    ula_src=1'b1;
+                    ula_src=2'b01;
                    // opd=1'b1;
+                 end
+                 
+                 I_MOVE:begin //Move
+                     prox_estado = AND_;
+                     aluop= 2'b11;
+                 end
+                 
+                 I_SHIFTADD:begin //Shift add
+                 prox_estado = SHIFTADD;
+                 aluop = 2'b00;
+                 ula_src= 2'b10;
                  end
                     
                 default begin
@@ -186,6 +199,15 @@ state_t prox_estado;
             reg_write = 1'b1;
             aluop = 2'b00;
             mtr = 'b1;
+        end
+        
+        SHIFTADD:begin
+           prox_estado = BUSCA_INSTR;
+            flag_r_e= 1'b1;
+            reg_write = 1'b1;
+            aluop = 2'b00;
+            mtr = 'b1;
+            ula_src = 2'b10;
         end
         
         SUB: begin
@@ -239,7 +261,7 @@ state_t prox_estado;
        prox_estado= ILOAD2;
        flag_r_e= 1'b1;
        aluop = 2'b00;
-       ula_src=1'b1;
+       ula_src=2'b01;
        mem_in=1'b1;
        ir_enable= 1'b0;
       // opd = 1'b1;
@@ -251,11 +273,14 @@ state_t prox_estado;
        ir_enable= 1'b0;
        mtr=1'b0;
        reg_write= 1'b1;
-       ula_src=1'b1;
+       ula_src=2'b01;
       // opd = 1'b1;
        
       
+      
        end
+       
+       
         
         STORE_1: begin
           prox_estado = STORE_2;

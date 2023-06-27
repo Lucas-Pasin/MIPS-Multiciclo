@@ -12,13 +12,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="104144fs"></ZoomStartTime>
-      <ZoomEndTime time="181245fs"></ZoomEndTime>
-      <Cursor1Time time="145000fs"></Cursor1Time>
+      <ZoomStartTime time="145207fs"></ZoomStartTime>
+      <ZoomEndTime time="300208fs"></ZoomEndTime>
+      <Cursor1Time time="225000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="183"></NameColumnWidth>
-      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+      <ValueColumnWidth column_width="80"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="35" />
    <wvobject fp_name="/Topo/reset" type="logic">

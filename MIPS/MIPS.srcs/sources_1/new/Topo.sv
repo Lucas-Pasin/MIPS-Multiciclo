@@ -23,7 +23,7 @@ logic                    zero_s;
 logic                    ovf_s;
 logic                    sgn_ovf_s;
 logic                    opd_s;
-logic                    ula_src_s;
+logic              [1:0] ula_src_s;
 logic                    mem_in_s;
 
 Datapath datapath_i
